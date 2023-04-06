@@ -1,0 +1,33 @@
+{
+  "name": "lpic-syntaxes",
+  "displayName": "LPiC Syntaxes",
+  "description": "The definitive source for all TextMate syntaxes used in the Literate Programming in ConTeXt projects",
+  "version": "0.0.1",
+  "preview": true,
+  "publisher": "lpic-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/litProgConTeXt/lpic-syntaxes"
+  },
+  "homepage": "https://github.com/litProgConTeXt/lpic-syntaxes",
+  "bugs": {
+    "url": "https://github.com/litProgConTeXt/lpic-syntaxes/issues"
+  },
+  "license": "Apache 2.0",
+  "author": {
+    "name": "Stephen Gaito"
+  },
+  "engines": {
+    "vscode": "^1.76.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ConTeXt",
+    "TeX",
+    "typesetting",
+    "Literate",
+    "Programming"
+  ]
+}
