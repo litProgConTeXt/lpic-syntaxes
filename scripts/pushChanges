@@ -1,0 +1,39 @@
+#!/bin/bash
+
+
+
+# Push syntax changes to vscode-context, vscode-lpic
+
+copy_syntaxes () {
+  toDir=$1
+  echo "----------------------------------------------------------"
+  pwd
+  echo ""
+  echo "Copying syntaxes to $toDir"
+  rm -rf $toDir/node_modules/lpic-syntaxes
+  mkdir -p $toDir/node_modules/lpic-syntaxes
+  cp -R lpic-syntaxes/lpicSyntaxes lpic-syntaxes/package.json \
+    $toDir/node_modules/lpic-syntaxes
+}
+
+cd ..
+copy_syntaxes vscode-context
+
+copy_syntaxes vscode-lpic
+
+# Now push syntax changes to conTeXt-langServer, lpic-langServer
+
+py_copy_syntaxes () {
+  toDir=$1
+  echo "----------------------------------------------------------"
+  echo ""
+  echo "Python copying syntaxes to $toDir"
+  pushd $toDir
+  pwd
+  .venv/bin/python scripts/updateLocalLpicSyntaxes
+  popd
+}
+
+py_copy_syntaxes conTeXt-langServer
+
+py_copy_syntaxes lpic-langServer
