@@ -1,0 +1,30 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+import yaml
+
+argParser = argparse.ArgumentParser()
+argParser.add_argument('jsonFile',
+  help="The original JSON file"
+)
+
+cliArgs = vars(argParser.parse_args())
+
+#print(yaml.dump(cliArgs))
+
+jsonInPath  = os.path.abspath(os.path.expanduser(cliArgs['jsonFile']))
+jsonOutPath = os.path.basename(jsonInPath) + '-reformated'
+
+with open(jsonInPath) as jsonInFile :
+  jsonInStr = bytes(jsonInFile.read(), "utf-8")
+
+jsonIn = json.loads(jsonInStr)
+
+#print(type(jsonIn))
+#print(yaml.dump(jsonIn))
+
+print(f"Saving reformated JSON file as: {jsonOutPath}")
+with open(jsonOutPath, 'w') as jsonOutFile :
+  jsonOutFile.write(json.dumps(jsonIn, sort_keys=False, indent=2))

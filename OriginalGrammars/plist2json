@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+import argparse
+import json
+import os
+import plistlib
+import yaml
+
+argParser = argparse.ArgumentParser()
+argParser.add_argument('plistGrammar',
+  help="The original grammar in plist format"
+)
+
+cliArgs = vars(argParser.parse_args())
+
+#print(yaml.dump(cliArgs))
+
+plistPath = os.path.abspath(os.path.expanduser(cliArgs['plistGrammar']))
+jsonPath  = os.path.basename(plistPath).removesuffix('.plist') + '.json'
+
+with open(plistPath) as plistFile :
+  plistStr = bytes(plistFile.read(), "utf-8")
+
+plist = plistlib.loads(plistStr, fmt=plistlib.FMT_XML)
+
+#print(type(plist))
+#print(yaml.dump(plist))
+
+print(f"Saving JSON formated grammar as: {jsonPath}")
+with open(jsonPath, 'w') as jsonFile :
+  jsonFile.write(json.dumps(plist, sort_keys=False, indent=2))
