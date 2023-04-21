@@ -5,7 +5,7 @@
   ],
   "version": "de5bafcd1b5c10e0fe6a6e994f6d352bd80e0bcf",
   "name": "ConTeXt",
-  "scopeName": "text.tex.context",
+  "scopeName": "source.context",
   "fileTypes": [
     "tex"
   ],
