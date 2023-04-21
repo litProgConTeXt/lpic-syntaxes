@@ -1,0 +1,2 @@
+source.c.lpic
+text.tex.command.lpic
