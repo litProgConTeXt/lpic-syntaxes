@@ -52,7 +52,7 @@
           "include": "text.tex.math"
         },
         {
-          "include": "$self"
+          "include": "#source.context"
         }
       ]
     },
