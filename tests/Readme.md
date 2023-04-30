@@ -13,17 +13,17 @@ the following forms:
 - `%% context`
 - `%% lpic`
 
-## Example 
+## Example
 
 For example to test the `context.tmLanguage.json` grammar type:
 
 ```
   cd tests
-  ./testGrammar jsonEcho.tex
+  tmgt -c tests.yaml jsonEcho.tex
 ```
 To test the `lpic.tmLanguage.json` grammar type:
 
 ```
   cd tests
-  ./testGrammar jeMain.tex
+  tmgt -c tests.yaml jeMain.tex
 ```
