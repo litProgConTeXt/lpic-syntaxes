@@ -9,6 +9,38 @@ To re-build these grammars yourself, you will need to install both
 gem](https://rubygems.org/gems/ruby_grammar_builder). See these two links for
 details on how to install these tools.
 
+Once these tools have been installed to actually (re)compile the gramamrs simply
+type:
+
+```
+  ./context-grammar
+```
+
+or
+
+```
+  ./lpic-grammar
+```
+
+## Resources
+
+For **local ruby_grammar_builder documentation** type:
+
+```
+  gem server -b localhost
+```
+
+The "standard" format for **scope selectors** can be found in section 12.4 of
+[Textmate Language Grammars](https://macromates.com/manual/en/language_grammars)
+
+Two good guides to writing Textmate Grammars are:
+
+  - [A guide to writing a language grammar (TextMate) in
+    Atom](https://gist.github.com/Aerijo/b8c82d647db783187804e86fa0a604a1)
+
+  - [Writing a TextMate Grammar: Some Lessons
+    Learned](https://www.apeth.com/nonblog/stories/textmatebundle.html)
+
 ## Converting existing grammars to Ruby Grammar format...
 
 The very crude tool `plist2rbGrammar` in the `OriginalGrammars` directory can be
