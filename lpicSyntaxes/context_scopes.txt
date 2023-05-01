@@ -7,3 +7,4 @@ meta.document
 meta.document.block.context
 meta.structure
 meta.structure.block.context
+meta.structure.name.context

@@ -41,6 +41,9 @@ Two good guides to writing Textmate Grammars are:
   - [Writing a TextMate Grammar: Some Lessons
     Learned](https://www.apeth.com/nonblog/stories/textmatebundle.html)
 
+The **[oniguruma](https://github.com/kkos/oniguruma) regular expression
+[syntax](https://github.com/kkos/oniguruma/blob/master/doc/RE)**
+
 ## Converting existing grammars to Ruby Grammar format...
 
 The very crude tool `plist2rbGrammar` in the `OriginalGrammars` directory can be

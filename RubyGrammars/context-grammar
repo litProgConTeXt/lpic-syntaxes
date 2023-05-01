@@ -44,7 +44,13 @@ contextStructurePat = Pattern.new(
 )
 
 grammar[:context_structure] = Pattern.new(
-  match: Pattern.new("\\").then(contextStructurePat).then(/\W/),
+  match: Pattern.new("\\")
+    .then(contextStructurePat)
+    .then(/\W+/)
+    .then(Pattern.new(
+      match: /\w+/,
+      tag_as: "meta.structure.name"
+    )),
   tag_as: "keyword.control.structure"
 )
 
