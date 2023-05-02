@@ -37,6 +37,8 @@ grammar[:context_start_stop_text] = PatternRange.new(
   ]
 )
 
+# TODO add \input
+
 # We follow cont-enp.pdf section 2.3 (page 26)
 
 contextStructurePat = Pattern.new(
@@ -69,6 +71,8 @@ grammar[:context_structure_block] = PatternRange.new(
     "source.context".to_sym
   ]
 )
+
+# TODO add matter-sections, parts, chapter, ...
 
 =begin
 ################################################################################
