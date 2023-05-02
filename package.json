@@ -31,7 +31,5 @@
     "Programming"
   ],
   "dependencies": {
-    "vscode-oniguruma": "^1.7.0",
-    "vscode-textmate": "^9.0.0"
   }
 }
