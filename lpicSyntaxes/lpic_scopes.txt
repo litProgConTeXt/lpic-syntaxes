@@ -1,2 +1,4 @@
+keyword.control.source.start.lpic
+keyword.control.source.stop.lpic
+keyword.control.source.type.lpic
 source.c.lpic
-text.tex.command.lpic

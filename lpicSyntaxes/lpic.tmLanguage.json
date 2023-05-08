@@ -9,24 +9,54 @@
   "fileTypes": [
     "tex"
   ],
-  "firstLineMatch": "^%% lpic",
+  "firstLineMatch": "^%+\\s[lL][pP][iI][cC]",
   "patterns": [
     {
       "include": "#ccode"
+    },
+    {
+      "include": "#cheader"
     }
   ],
   "repository": {
     "ccode": {
-      "begin": "\\startCCode",
-      "end": "\\endCCode",
+      "begin": "\\\\start(CCode)\\W",
+      "end": "\\\\stop(CCode)\\W",
       "beginCaptures": {
         "0": {
-          "name": "text.tex.command.lpic"
+          "name": "keyword.control.source.start.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "text.tex.command.lpic"
+          "name": "keyword.control.source.stop.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        }
+      },
+      "name": "source.c.lpic"
+    },
+    "cheader": {
+      "begin": "\\\\start(CHeader)\\W",
+      "end": "\\\\stop(CHeader)\\W",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.source.start.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.source.stop.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
         }
       },
       "name": "source.c.lpic"
