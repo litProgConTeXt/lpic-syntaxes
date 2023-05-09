@@ -44,9 +44,27 @@ def createCodeRange(codeName, codeType)
 lpicG[:ccode]   = createCodeRange('c', 'cCode')
 lpicG[:cheader] = createCodeRange('c', 'cHeader')
 
+lpicG[:build] = Pattern.new(
+  match: Pattern.new(/\\build/)
+    .then(GPatterns::SimpleArg)
+    .then(GPatterns::SimpleArg),
+  tag_as: "keyword.control.build"
+)
+
+lpicG[:requires] = Pattern.new(
+  match: Pattern.new(/\\requires/)
+    .then(GPatterns::SimpleArg)
+    .then(GPatterns::SimpleArg)
+    .then(GPatterns::SimpleArg),
+  tag_as: "keyword.control.requires"
+)
+
 lpicG[:$initial_context] = [
   :ccode,
-  :cheader
+  :cheader,
+  :build,
+  :requires,
+  "source.context"
 ]
 
 lpicG.save_to(

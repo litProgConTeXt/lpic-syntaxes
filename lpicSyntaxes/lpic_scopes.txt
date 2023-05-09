@@ -1,3 +1,6 @@
+keyword.control.build.lpic
+keyword.control.requires.lpic
+keyword.control.simple.arg.lpic
 keyword.control.source.start.lpic
 keyword.control.source.stop.lpic
 keyword.control.source.type.lpic

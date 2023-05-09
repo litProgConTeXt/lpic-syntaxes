@@ -16,9 +16,30 @@
     },
     {
       "include": "#cheader"
+    },
+    {
+      "include": "#build"
+    },
+    {
+      "include": "#requires"
+    },
+    {
+      "include": "source.context"
     }
   ],
   "repository": {
+    "build": {
+      "match": "\\\\build[\\[\\(\\{](\\w+)[\\]\\)\\}][\\[\\(\\{](\\w+)[\\]\\)\\}]",
+      "captures": {
+        "1": {
+          "name": "keyword.control.simple.arg.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
+        }
+      },
+      "name": "keyword.control.build.lpic"
+    },
     "ccode": {
       "begin": "\\\\start(CCode)\\W",
       "end": "\\\\stop(CCode)\\W",
@@ -60,6 +81,21 @@
         }
       },
       "name": "source.c.lpic"
+    },
+    "requires": {
+      "match": "\\\\requires[\\[\\(\\{](\\w+)[\\]\\)\\}][\\[\\(\\{](\\w+)[\\]\\)\\}][\\[\\(\\{](\\w+)[\\]\\)\\}]",
+      "captures": {
+        "1": {
+          "name": "keyword.control.simple.arg.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
+        },
+        "3": {
+          "name": "keyword.control.simple.arg.lpic"
+        }
+      },
+      "name": "keyword.control.requires.lpic"
     }
   }
 }
