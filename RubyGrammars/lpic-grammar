@@ -44,25 +44,48 @@ def createCodeRange(codeName, codeType)
 lpicG[:ccode]   = createCodeRange('c', 'cCode')
 lpicG[:cheader] = createCodeRange('c', 'cHeader')
 
-lpicG[:build] = Pattern.new(
-  match: Pattern.new(/\\build/)
+#lpicG[:build] = Pattern.new(
+#  match: Pattern.new(/\\build/)
+#    .then(GPatterns::SimpleArg)
+#    .then(GPatterns::SimpleArg),
+#  tag_as: "keyword.control.build"
+#)
+
+lpicG[:description] = PatternRange.new(
+  start_pattern: Pattern.new(
+    match: 
+    Pattern.new(/\\startDescription/)
     .then(GPatterns::SimpleArg)
-    .then(GPatterns::SimpleArg),
-  tag_as: "keyword.control.build"
+    .then(GPatterns::SimpleArg)
+    .then(/\W/),
+    tag_as: "keyword.control.description.start"
+  ),
+  end_pattern: Pattern.new(
+    match: /\\stopDescription\W/,
+    tag_as: "keyword.control.description.stop"
+  ),
+  tag_as: "keyword.control.description",
+  tag_content_as: "meta.control.description",
+  includes: [
+    :requires,
+    "source.lpic".to_sym
+  ]
 )
 
 lpicG[:requires] = Pattern.new(
-  match: Pattern.new(/\\requires/)
+  match:
+    Pattern.new(/\\requires/)
     .then(GPatterns::SimpleArg)
     .then(GPatterns::SimpleArg)
-    .then(GPatterns::SimpleArg),
+    .then(/\W/),
   tag_as: "keyword.control.requires"
 )
 
 lpicG[:$initial_context] = [
   :ccode,
   :cheader,
-  :build,
+  #:build,
+  :description,
   :requires,
   "source.context"
 ]
