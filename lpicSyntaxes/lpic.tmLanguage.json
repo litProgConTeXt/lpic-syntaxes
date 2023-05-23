@@ -24,12 +24,15 @@
       "include": "#requires"
     },
     {
+      "include": "#creates"
+    },
+    {
       "include": "source.context"
     }
   ],
   "repository": {
     "ccode": {
-      "begin": "\\\\start(CCode)\\W",
+      "begin": "\\\\start(CCode)[\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
       "end": "\\\\stop(CCode)\\W",
       "beginCaptures": {
         "0": {
@@ -37,6 +40,9 @@
         },
         "1": {
           "name": "keyword.control.source.type.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
         }
       },
       "endCaptures": {
@@ -50,7 +56,7 @@
       "name": "source.c.lpic"
     },
     "cheader": {
-      "begin": "\\\\start(CHeader)\\W",
+      "begin": "\\\\start(CHeader)[\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
       "end": "\\\\stop(CHeader)\\W",
       "beginCaptures": {
         "0": {
@@ -58,6 +64,9 @@
         },
         "1": {
           "name": "keyword.control.source.type.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
         }
       },
       "endCaptures": {
@@ -70,8 +79,20 @@
       },
       "name": "source.c.lpic"
     },
+    "creates": {
+      "match": "\\\\creates[\\[\\(\\{](\\S+)[\\]\\)\\}][\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
+      "captures": {
+        "1": {
+          "name": "keyword.control.simple.arg.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
+        }
+      },
+      "name": "keyword.control.creates.lpic"
+    },
     "description": {
-      "begin": "\\\\startDescription[\\[\\(\\{](\\w+)[\\]\\)\\}][\\[\\(\\{](\\w+)[\\]\\)\\}]\\W",
+      "begin": "\\\\startDescription[\\[\\(\\{](\\S+)[\\]\\)\\}][\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
       "end": "\\\\stopDescription\\W",
       "beginCaptures": {
         "0": {
@@ -96,12 +117,15 @@
           "include": "#requires"
         },
         {
+          "include": "#creates"
+        },
+        {
           "include": "#source.lpic"
         }
       ]
     },
     "requires": {
-      "match": "\\\\requires[\\[\\(\\{](\\w+)[\\]\\)\\}][\\[\\(\\{](\\w+)[\\]\\)\\}]\\W",
+      "match": "\\\\requires[\\[\\(\\{](\\S+)[\\]\\)\\}][\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
       "captures": {
         "1": {
           "name": "keyword.control.simple.arg.lpic"

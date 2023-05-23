@@ -1,3 +1,4 @@
+keyword.control.creates.lpic
 keyword.control.description.lpic
 keyword.control.description.start.lpic
 keyword.control.description.stop.lpic
