@@ -43,8 +43,10 @@ def createCodeRange(codeName, codeType)
   )
   end
 
-lpicG[:ccode]   = createCodeRange('c', 'cCode')
-lpicG[:cheader] = createCodeRange('c', 'cHeader')
+lpicG[:ccode]     = createCodeRange('c', 'cCode')
+lpicG[:cheader]   = createCodeRange('c', 'cHeader')
+lpicG[:cppcode]   = createCodeRange('c++', 'cppCode')
+lpicG[:cppheader] = createCodeRange('c++', 'cppHeader')
 
 lpicG[:description] = PatternRange.new(
   start_pattern: Pattern.new(
@@ -89,6 +91,8 @@ lpicG[:creates] = Pattern.new(
 lpicG[:$initial_context] = [
   :ccode,
   :cheader,
+  :cppcode,
+  :cppheader,
   :description,
   :requires,
   :creates,

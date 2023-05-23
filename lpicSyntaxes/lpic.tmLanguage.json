@@ -18,6 +18,12 @@
       "include": "#cheader"
     },
     {
+      "include": "#cppcode"
+    },
+    {
+      "include": "#cppheader"
+    },
+    {
       "include": "#description"
     },
     {
@@ -78,6 +84,54 @@
         }
       },
       "name": "source.c.lpic"
+    },
+    "cppcode": {
+      "begin": "\\\\start(CppCode)[\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
+      "end": "\\\\stop(CppCode)\\W",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.source.start.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.source.stop.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        }
+      },
+      "name": "source.c++.lpic"
+    },
+    "cppheader": {
+      "begin": "\\\\start(CppHeader)[\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
+      "end": "\\\\stop(CppHeader)\\W",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.control.source.start.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        },
+        "2": {
+          "name": "keyword.control.simple.arg.lpic"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "keyword.control.source.stop.lpic"
+        },
+        "1": {
+          "name": "keyword.control.source.type.lpic"
+        }
+      },
+      "name": "source.c++.lpic"
     },
     "creates": {
       "match": "\\\\creates[\\[\\(\\{](\\S+)[\\]\\)\\}][\\[\\(\\{](\\S+)[\\]\\)\\}]\\W",
