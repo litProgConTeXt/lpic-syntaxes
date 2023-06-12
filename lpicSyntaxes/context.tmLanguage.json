@@ -41,7 +41,7 @@
       ]
     },
     "context_structure": {
-      "match": "\\\\(?:(?:project)|(?:environment)|(?:product)|(?:component))\\W+(\\w+)",
+      "match": "\\\\(?:(?:project)|(?:environment)|(?:product)|(?:component))\\W+([\\w\\/]+)",
       "captures": {
         "1": {
           "name": "meta.structure.name.context"
